@@ -1,7 +1,7 @@
 import random
 
 
-class ljogo:
+class Partida:
     # construtor de um jogo
     def __init__(self):
         # define um tabuleiro sem jogadas
@@ -72,6 +72,11 @@ class ljogo:
         # se o jogador da vez for o jogador 0 o proximo jogador sera o jogador 1
         # se nao o proximo jogador sera o jogador 0
         self.jogador_da_vez = 1 if self.jogador_da_vez == 0 else 0
+
+    # valida se o jogo esta em andamento
+    def em_andamento(self):
+        # retorna sim(True) se houver jogadas disponiveis e se nao ha um vencedor
+        return self.ha_jogadas_disponiveis() and not self.ha_vencedor()
 
     # valida se o jogo ja terminou
     def terminou(self):

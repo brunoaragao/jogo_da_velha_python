@@ -1,3 +1,3 @@
-from engine import engine
+from app.motor import Motor
 
-engine().rodar()
+Motor().executar()
